@@ -1,0 +1,5 @@
+﻿TBD:
+	Error Handling 
+	Logging w/ log levels
+	extend console params 
+	filtering 

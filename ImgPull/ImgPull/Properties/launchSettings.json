@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "FourChanImgPull": {
+      "commandName": "Project",
+      "commandLineArgs": "-od C:\\Users\\Alex\\TestOutputDirectory\\ -b w"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <Folder Include="Drivers\BEPUP\Scenarios\ScenarioDefinitions\" />
+    <Folder Include="Simulation\Engine\BEPUP\Factories\Bodies\Std\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OpenTK.NETCore" Version="1.1.2749.6433" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ExpEng.Console\ExpEng.Console.csproj" />
+    <ProjectReference Include="..\ExpEng.Core.BEPUP\ExpEng.Core.BEPUP.csproj" />
+    <ProjectReference Include="..\ExpEng.Core.Contracts\ExpEng.Core.Contracts.csproj" />
+    <ProjectReference Include="..\ExpEng.Core\ExpEng.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Demos">
+      <HintPath>..\..\Lib\BEPUP\Demos.dll</HintPath>
+    </Reference>
+    <Reference Include="DemoRenderer">
+      <HintPath>..\..\Lib\BEPUP\DemoRenderer.dll</HintPath>
+    </Reference>
+    <Reference Include="DemoContentBuilder">
+      <HintPath>..\..\Lib\BEPUP\DemoContentBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="DemoContentLoader">
+      <HintPath>..\..\Lib\BEPUP\DemoContentLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="DemoBenchmarks">
+      <HintPath>..\..\Lib\BEPUP\DemoBenchmarks.dll</HintPath>
+    </Reference>
+    <Reference Include="DemoUtilities">
+      <HintPath>..\..\Lib\BEPUP\DemoUtilities.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy /i /r /d /y $(OutDir)*.* $(SolutionDir)..\Lib\&#xD;&#xA;xcopy /i /r /d /y $(OutDir)*.* $(SolutionDir)..\..\Lib\&#xD;&#xA;xcopy /i /r /d /y $(OutDir)*.* $(SolutionDir)..\LibTest\&#xD;&#xA;xcopy /i /r /d /y $(OutDir)*.* $(SolutionDir)..\..\LibTest\" />
+  </Target>
+
+</Project>

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OpenTK" Version="4.7.7" />
+    <PackageReference Include="StbImageSharp" Version="2.27.13" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy /i /r /d /y $(OutDir)*.* $(SolutionDir)..\Lib\&#xD;&#xA;xcopy /i /r /d /y $(OutDir)*.* $(SolutionDir)..\..\Lib\&#xD;&#xA;xcopy /i /r /d /y $(OutDir)*.* $(SolutionDir)..\LibTest\&#xD;&#xA;xcopy /i /r /d /y $(OutDir)*.* $(SolutionDir)..\..\LibTest\" />
+  </Target>
+
+</Project>
