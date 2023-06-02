@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fractals.Base
+namespace Fractals.Contracts
 {
-    internal class Math
+    internal interface IInitiator
     {
     }
 }

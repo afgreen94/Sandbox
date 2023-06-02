@@ -11,6 +11,31 @@
     <PackageReference Include="StbImageSharp" Version="2.27.13" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Fractals.Contracts\Fractals.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="AFrame.Base">
+      <HintPath>..\..\..\Lib\AFrame.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="AFrame.Base.Contracts">
+      <HintPath>..\..\..\Lib\AFrame.Base.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="AFrame.Gaming">
+      <HintPath>..\..\..\Lib\AFrame.Gaming.dll</HintPath>
+    </Reference>
+    <Reference Include="AFrame.Gaming.Console">
+      <HintPath>..\..\..\Lib\AFrame.Gaming.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="AFrame.Gaming.Contracts">
+      <HintPath>..\..\..\Lib\AFrame.Gaming.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="AFrame.Signals.Contracts">
+      <HintPath>..\..\..\Lib\AFrame.Signals.Contracts.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="xcopy /i /r /d /y $(OutDir)*.* $(SolutionDir)..\Lib\&#xD;&#xA;xcopy /i /r /d /y $(OutDir)*.* $(SolutionDir)..\..\Lib\&#xD;&#xA;xcopy /i /r /d /y $(OutDir)*.* $(SolutionDir)..\LibTest\&#xD;&#xA;xcopy /i /r /d /y $(OutDir)*.* $(SolutionDir)..\..\LibTest\" />
   </Target>
