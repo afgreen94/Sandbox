@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AFrame.Base.Contracts.Math;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,13 @@ using System.Threading.Tasks;
 
 namespace Fractals.Contracts
 {
-    internal interface IInitiator
+
+    public interface IInitiator : IDescribableGraph<IInitiatorDescription>
     {
+
+    }
+    public interface IInitiatorDescription : IGraphDescription
+    {
+
     }
 }
