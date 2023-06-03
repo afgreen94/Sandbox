@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fractals.Contracts
+namespace Fractals.Visualization
 {
+    public class DefaultInitiator
+    {
+    }
 }
